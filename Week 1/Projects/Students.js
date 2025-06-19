@@ -4,7 +4,7 @@ const students = [
     marks: 88,
     total: 100,
     age: 18,
-    fName: "Alice",
+    fName: "Klice",
     lName: "Smith",
     student_id: "S001",
   },
@@ -12,7 +12,7 @@ const students = [
     marks: 25,
     total: 100,
     age: 19,
-    fName: "Bob",
+    fName: "Tob",
     lName: "Johnson",
     student_id: "S002",
   },
@@ -20,7 +20,7 @@ const students = [
     marks: 95,
     total: 100,
     age: 17,
-    fName: "Charlie",
+    fName: "Pharlie",
     lName: "Brown",
     student_id: "S003",
   },
@@ -28,7 +28,7 @@ const students = [
     marks: 85,
     total: 100,
     age: 18,
-    fName: "Diana",
+    fName: "Siana",
     lName: "Williams",
     student_id: "S004",
   },
@@ -36,7 +36,7 @@ const students = [
     marks: 90,
     total: 100,
     age: 20,
-    fName: "Ethan",
+    fName: "Othan",
     lName: "Jones",
     student_id: "S005",
   },
@@ -52,7 +52,7 @@ const students = [
     marks: 95,
     total: 100,
     age: 19,
-    fName: "George",
+    fName: "Meorge",
     lName: "Martinez",
     student_id: "S007",
   },
@@ -60,7 +60,7 @@ const students = [
     marks: 87,
     total: 100,
     age: 17,
-    fName: "Hannah",
+    fName: "Jannah",
     lName: "Lee",
     student_id: "S008",
   },
@@ -68,7 +68,7 @@ const students = [
     marks: 79,
     total: 100,
     age: 18,
-    fName: "Ian",
+    fName: "Lan",
     lName: "Walker",
     student_id: "S009",
   },
@@ -76,7 +76,7 @@ const students = [
     marks: 93,
     total: 100,
     age: 20,
-    fName: "Julia",
+    fName: "Qulia",
     lName: "Hall",
     student_id: "S010",
   },
@@ -113,13 +113,60 @@ console.log(results);
     result: "high distinction"
   }
 */
+const studentsResults = students.map(student => {
+  let result;
+
+  if (student.marks > 85) {
+    result = "high distinction";
+  } else if (student.marks > 60) {
+    result = "merit";
+  } else if (student.marks > 35) {
+    result = "pass";
+  } else {
+    result = "failed";
+  }
+  return {
+    ...student,
+    result
+  };
+});
+
+studentsResults.forEach(student => console.log(student));
+
 
 // 2. Filter the students into 3 different Arrays split between pass/merit/high distinction
+// will later practice using find();
+const studentDistinction = students.map(student =>{
+    if(student.age === "high distinction"){return student;}
+}
+)
+
+const studentMerit = students.map(student =>{
+    if(student.result === "merit"){return student;}
+    }
+)
+
+const studentPass = students.map(student =>{
+    if(student.result === "pass"){return student;}
+})
+
+studentDistinction.forEach(student => console.log(student));
 
 // 3. Fetch two objects held within the Student array
+const randStudents = students.slice(3, 4);
+
+console.log(randStudents);
+// Fetch the first two student objects from the students array
+const twoStudents = students.slice(0, 2);
+
+console.log(twoStudents);
 
 // 4. Print first name and last name of the elements in the Arrays using template literals using sentence case
 
+students.forEach(student => console.log(`This student name is: ${student.fName} ${student.lName}`));
+
 // 5. Sort the array alphabetically asc
+students.sort((a,b) => a.fName.localeCompare(b.fName));
+students.forEach(s => console.log(s.fName));
 
 // 6. Combine two array consisting of Student and Result
