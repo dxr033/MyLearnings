@@ -1,0 +1,56 @@
+In JavaScript, 
+conditionals are used to perform different actions based on different conditions. The primary conditional statements are `if`, `else if`, and `else`.
+The `if` statement checks a condition, and if it's true, the block of code inside it runs. 
+
+If the condition is false, the program can check additional conditions using `else if`, or fall back to a default block of code using `else`.
+JavaScript also includes the ternary operator (`condition ? valueIfTrue : valueIfFalse`) for simpler, single-condition decisions,
+and `switch` statements for handling multiple possible values of a single variable.
+
+
+Basic if/else statement:
+
+let isRaining = false;
+
+if (isRaining) {
+  console.log("Take an umbrella.");
+} else {
+  console.log("No umbrella needed.");
+}
+
+Basic if/if else/else statement:
+
+let score = 75;
+
+if (score >= 90) {
+  console.log("Grade: A");
+} else if (score >= 80) {
+  console.log("Grade: B");
+} else if (score >= 70) {
+  console.log("Grade: C");
+} else {
+  console.log("Grade: F");
+}
+
+Ternary operation:
+
+let isLoggedIn = true;
+let message = isLoggedIn ? "Welcome back!" : "Please log in.";
+console.log(message);
+let day = "Tuesday";
+
+Switch case:
+
+switch (day) {
+  case "Monday":
+    console.log("Start of the work week.");
+    break;
+  case "Tuesday":
+    console.log("Second day of the work week.");
+    break;
+  case "Friday":
+    console.log("Almost weekend!");
+    break;
+  default:
+    console.log("Just another day.");
+}
+

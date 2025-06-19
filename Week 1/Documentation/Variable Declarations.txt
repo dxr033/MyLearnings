@@ -1,0 +1,8 @@
+let // used in ES6 to declare block-scoped variables
+var // used to declare function-scoped variables (can be redeclared and updated)
+const // used to declare block-scoped constants (cannot be reassigned) must have a value set cannot be undefined
+
+It is possible to declare multiple variables in a single line using a comma-separated list:
+e.g. 
+let num = 12, letter = 'a', word = 'abc';
+

@@ -1,0 +1,20 @@
+JS String Documentation:
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
+
+Useful functions:
+
+.charAt(position) // returns the char at specified location.
+
+.substring(start,end) // returns the substring of specified. 
+
+.slice(int) // removes the specified amount of characters from the String.
+
+.toUpperCase() // manipulates string to all caps.
+
+.toLowerCase() // manipulates string to all lowercase
+
+.replace(first string, second string) // replaces the first string with the second string
+
+.trim() // eliminates any whitespace contained in the String.
+
+.includes(stringSearch) // return T/F if the stringSearch is in the string

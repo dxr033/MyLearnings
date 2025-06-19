@@ -1,0 +1,9 @@
+Each element in an array has a numbered position known as its index. We can access individual items using their index,
+which is similar to referencing an item in a list based on the item’s position.
+e.g.
+
+const myArray = ['Hello','There','Darcy!']; // index of 3 elements
+myArray[2] // contains 'Darcy!'
+
+
+
