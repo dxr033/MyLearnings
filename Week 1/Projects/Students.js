@@ -127,46 +127,50 @@ const studentsResults = students.map(student => {
   }
   return {
     ...student,
-    result
+    result // return statement to append 'result' to existing student object
   };
 });
 
-studentsResults.forEach(student => console.log(student));
+studentsResults.forEach(student => console.log(student)); // results not being added to studentsResults
 
 
 // 2. Filter the students into 3 different Arrays split between pass/merit/high distinction
 // will later practice using find();
 const studentDistinction = students.map(student =>{
-    if(student.age === "high distinction"){return student;}
+    if(student.result === "high distinction"){return student;}
+
+    // add to studentDistinction array
 }
 )
 
 const studentMerit = students.map(student =>{
     if(student.result === "merit"){return student;}
+
+        // add to studentMerit array
     }
 )
 
 const studentPass = students.map(student =>{
     if(student.result === "pass"){return student;}
+        // add to studentPass array
 })
 
 studentDistinction.forEach(student => console.log(student));
 
 // 3. Fetch two objects held within the Student array
 const randStudents = students.slice(3, 4);
-
 console.log(randStudents);
+
 // Fetch the first two student objects from the students array
 const twoStudents = students.slice(0, 2);
-
 console.log(twoStudents);
 
 // 4. Print first name and last name of the elements in the Arrays using template literals using sentence case
-
 students.forEach(student => console.log(`This student name is: ${student.fName} ${student.lName}`));
 
 // 5. Sort the array alphabetically asc
 students.sort((a,b) => a.fName.localeCompare(b.fName));
 students.forEach(s => console.log(s.fName));
 
-// 6. Combine two array consisting of Student and Result
+// 6. Combine two arrays consisting of Student and Result
+
