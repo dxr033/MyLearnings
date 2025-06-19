@@ -171,9 +171,33 @@ const combinedArray = students.concat(studentsResults);
 
 // 7. Modify student object to have a new Array of students and then combine the two Arrays 
 
+// Create a new array of additional students
+const newStudents = [
+    {
+        marks: 70,
+        total: 100,
+        age: 21,
+        fName: "Alex",
+        lName: "Cooper",
+        student_id: "S011",
+    },
+    {
+        marks: 55,
+        total: 100,
+        age: 22,
+        fName: "Sam",
+        lName: "Taylor",
+        student_id: "S012",
+    }
+];
+
+const allStudents = students.concat(newStudents);
+//console.log(allStudents);
+
 
 // 8. Print all the keys and values of the Array as a single string with keys and values separate
 students.forEach(student => {
     const studentInfo = `${student.fName} ${student.lName} has a score of ${student.marks} out of ${student.total}.`;
     console.log(studentInfo);
+
 });
