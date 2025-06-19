@@ -7,3 +7,33 @@ myArray[2] // contains 'Darcy!'
 
 
 
+array.splice(start, itemCount, item1, item2, ..., itemN);
+
+start: The array index at which the insertion and/or removal is to begin.
+itemCount (optional): The number of elements in the array to remove beginning at start.
+item1, item2,..., itemN (optional): The elements that will be inserted into the array at start.
+If only the start index is provided then it will remove all the elements from start to the end of the array.
+
+A negative start value indicates an offset from the end of the array.
+
+
+The .filter() array method creates a new array with all elements that pass the test from the provided function.
+
+Syntax
+// Arrow function
+array.filter(element => { ... })
+array.filter((element, index) => { ... })
+array.filter((element, index, array) => { ... })
+.filter() takes the following parameters:
+
+element: The current element being processed in the array.
+index (optional): The index of the current element being processed in the array.
+array (optional): The array filter was called upon.
+The method will return a new array with the elements that pass the test.
+
+const numbers = [6, 44, 87, 1, 197, 22];
+
+const filteredNumbers = numbers.filter((num) => num >= 10);
+
+console.log(filteredNumbers);
+// Output: [44, 87, 197, 22]

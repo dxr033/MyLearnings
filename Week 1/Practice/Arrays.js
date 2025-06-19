@@ -34,3 +34,9 @@ console.log(replacedArray);
 
 myArray.slice();
 console.log(myArray);
+
+const daysOfWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+
+daysOfWeek.splice(0, 2, 'Saturday', 'Sunday');
+
+console.log(daysOfWeek);

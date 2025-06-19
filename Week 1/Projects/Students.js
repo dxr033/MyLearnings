@@ -100,7 +100,7 @@ const results = students.map((student) => {
     ? "pass"
     : "failed";
 });
-console.log(results);
+//console.log(results);
 // 1.5 Should print the Object and add results as an key and whatever marks to that key
 /*
 {
@@ -126,51 +126,54 @@ const studentsResults = students.map(student => {
     result = "failed";
   }
   return {
-    ...student,
+    ...student, // Check the spread operator
     result // return statement to append 'result' to existing student object
   };
 });
 
-studentsResults.forEach(student => console.log(student)); // results not being added to studentsResults
+//studentsResults.forEach(student => console.log(student)); // results not being added to studentsResults
+//console.log(`StudentsResults: ${JSON.stringify(studentsResults)}`);
+//console.log(`Students: ${JSON.stringify(students)}`);
 
 
 // 2. Filter the students into 3 different Arrays split between pass/merit/high distinction
-// will later practice using find();
-const studentDistinction = students.map(student =>{
-    if(student.result === "high distinction"){return student;}
+// Invoke this with .filter()
+const studentDistinction = studentsResults.filter(student => student.result === "high distinction") ;
+//console.log(`studentDistinction: ${JSON.stringify(studentDistinction)}`);
+const studentMerit = studentsResults.filter(student => student.result === "merit");
+const studentPass = studentsResults.filter(student => student.result === "pass");
 
-    // add to studentDistinction array
-}
-)
-
-const studentMerit = students.map(student =>{
-    if(student.result === "merit"){return student;}
-
-        // add to studentMerit array
-    }
-)
-
-const studentPass = students.map(student =>{
-    if(student.result === "pass"){return student;}
-        // add to studentPass array
-})
-
-studentDistinction.forEach(student => console.log(student));
+//studentDistinction.forEach(student => console.log(student));
 
 // 3. Fetch two objects held within the Student array
-const randStudents = students.slice(3, 4);
-console.log(randStudents);
+const randStudents = students.slice(3, 5);
+//console.log(`randStudents: ${JSON.stringify(randStudents)}`);
 
-// Fetch the first two student objects from the students array
+// Fetch the first two student objects from the students array ... check slice(10,12)
 const twoStudents = students.slice(0, 2);
-console.log(twoStudents);
+//console.log(twoStudents);
+
+// Check the splice() function and what it does.
 
 // 4. Print first name and last name of the elements in the Arrays using template literals using sentence case
-students.forEach(student => console.log(`This student name is: ${student.fName} ${student.lName}`));
+// This is called object destructuring with Arrays
+students.forEach(({fName,lName}) => console.log(`This student name is: ${fName} ${lName}`));
 
 // 5. Sort the array alphabetically asc
 students.sort((a,b) => a.fName.localeCompare(b.fName));
-students.forEach(s => console.log(s.fName));
+//students.forEach(s => console.log(s.fName));
 
 // 6. Combine two arrays consisting of Student and Result
+// Use concat, not splice. concat returns a new array combining both arrays.
+// splice is for adding/removing elements in-place, not for combining arrays.
+const combinedArray = students.concat(studentsResults);
+//console.log(...combinedArray);
 
+// 7. Modify student object to have a new Array of students and then combine the two Arrays 
+
+
+// 8. Print all the keys and values of the Array as a single string with keys and values separate
+students.forEach(student => {
+    const studentInfo = `${student.fName} ${student.lName} has a score of ${student.marks} out of ${student.total}.`;
+    console.log(studentInfo);
+});
