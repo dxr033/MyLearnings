@@ -1,0 +1,23 @@
+// Destructuring in JavaScript allows you to unpack values from arrays or properties from objects into distinct variables.
+
+// Array destructuring
+const arr = [1, 2, 3];
+const [a, b, c] = arr; // a = 1, b = 2, c = 3
+
+// Object destructuring
+const obj = { name: "Alice", age: 25 };
+const { name, age } = obj; // name = "Alice", age = 25
+
+// You can set default values
+const [x = 10, y = 20] = [5]; // x = 5, y = 20
+
+// Nested destructuring
+const nested = { foo: { bar: 42 } };
+const { foo: { bar } } = nested; // bar = 42
+
+// Skipping values in arrays
+const [first, , third] = [1, 2, 3]; // first = 1, third = 3
+
+// Renaming variables during object destructuring
+const person = { firstName: "Bob", lastName: "Smith" };
+const { firstName: f, lastName: l } = person; // f = "Bob", l = "Smith"

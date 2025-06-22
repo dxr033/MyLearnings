@@ -137,7 +137,7 @@ const studentsResults = students.map(student => {
 
 
 // 2. Filter the students into 3 different Arrays split between pass/merit/high distinction
-// Invoke this with .filter()
+// Invoke this with .filter() and .find();
 const studentDistinction = studentsResults.filter(student => student.result === "high distinction") ;
 //console.log(`studentDistinction: ${JSON.stringify(studentDistinction)}`);
 const studentMerit = studentsResults.filter(student => student.result === "merit");
@@ -157,7 +157,7 @@ const twoStudents = students.slice(0, 2);
 
 // 4. Print first name and last name of the elements in the Arrays using template literals using sentence case
 // This is called object destructuring with Arrays
-students.forEach(({fName,lName}) => console.log(`This student name is: ${fName} ${lName}`));
+//students.forEach(({fName,lName}) => console.log(`This student name is: ${fName} ${lName}`));
 
 // 5. Sort the array alphabetically asc
 students.sort((a,b) => a.fName.localeCompare(b.fName));
@@ -166,8 +166,10 @@ students.sort((a,b) => a.fName.localeCompare(b.fName));
 // 6. Combine two arrays consisting of Student and Result
 // Use concat, not splice. concat returns a new array combining both arrays.
 // splice is for adding/removing elements in-place, not for combining arrays.
+
+// Try using the spread operator using different examples such as fruits and vegetables
 const combinedArray = students.concat(studentsResults);
-//console.log(...combinedArray);
+//console.log(`StudentsResults: ${JSON.stringify(combinedArray)}`);
 
 // 7. Modify student object to have a new Array of students and then combine the two Arrays 
 
@@ -192,12 +194,29 @@ const newStudents = [
 ];
 
 const allStudents = students.concat(newStudents);
-//console.log(allStudents);
+//console.log(...allStudents);
 
 
 // 8. Print all the keys and values of the Array as a single string with keys and values separate
+// Using Object.entries() to get key-value pairs and map them to a string This will print each student's information in a single string format
 students.forEach(student => {
-    const studentInfo = `${student.fName} ${student.lName} has a score of ${student.marks} out of ${student.total}.`;
-    console.log(studentInfo);
+    let studentString = Object.entries(student).map(item => console.log(item)) // Object.entries() returns an array of key-value pairs
 
+
+        //.join(", "); // Join the key-value pairs into a single string
+
+        //studentString = {name: dfgdj age 34}, {name: gtfk}
+    //console.log(`${studentString}`);
 });
+
+
+
+// students.forEach(student => {
+//     const studentInfo = `${student.fName} ${student.lName} has a score of ${student.marks} out of ${student.total}.`;
+//     console.log(studentInfo);
+// });
+
+// 9. Closures and Hoisting in JS and uses of logic operators 
+// if(1 === '1')
+// Create an example for uses of logical operators for this condition with multiple examples
+
