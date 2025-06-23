@@ -40,3 +40,26 @@ const daysOfWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
 daysOfWeek.splice(0, 2, 'Saturday', 'Sunday');
 
 console.log(daysOfWeek);
+
+/*
+const store = {
+  sunglasses: {
+    inventory: 817, 
+    cost: 9.99
+  },
+  pants: {
+    inventory: 236, 
+    cost: 7.99
+  },
+  bags: {
+    inventory: 17, 
+    cost: 12.99
+  }
+};
+*/
+store[item[0]].inventory // store.sunglasses.inventory
+store[item[0]].cost // store.sunglasses.cost
+store[item[1]].inventory // store.pants.inventory
+store[item[1]].cost // store.pants.cost
+
+

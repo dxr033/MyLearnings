@@ -220,3 +220,6 @@ students.forEach(student => {
 // if(1 === '1')
 // Create an example for uses of logical operators for this condition with multiple examples
 
+
+// Add function percentage and total to student Object and add three marks as English science maths so total marks and percentage will
+//  return the average marks (as an object)

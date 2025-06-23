@@ -7,9 +7,11 @@ const [a, b, c] = arr; // a = 1, b = 2, c = 3
 // Object destructuring
 const obj = { name: "Alice", age: 25 };
 const { name, age } = obj; // name = "Alice", age = 25
+console.log(name);
 
 // You can set default values
-const [x = 10, y = 20] = [5]; // x = 5, y = 20
+const [x = 10, y = 20] = [5,3]; // x = 5, y = 3
+console.log(y);
 
 // Nested destructuring
 const nested = { foo: { bar: 42 } };
