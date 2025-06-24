@@ -93,24 +93,24 @@ console.log('This message is logged immediately.' + timer);
 // };
 
 
-const fetchData = () => {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      const success = true;
+// const fetchData = () => {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       const success = true;
  
-      if (success) {
-        resolve({ name: "Alice", age: 25 });
-      } else {
-        reject("Failed to fetch data.");
-      }
-    }, 2000); // simulates 2 seconds delay
-  });
-};
+//       if (success) {
+//         resolve({ name: "Alice", age: 25 });
+//       } else {
+//         reject("Failed to fetch data.");
+//       }
+//     }, 2000); // simulates 2 seconds delay
+//   });
+// };
  
-fetchData()
-  .then(data => {console.log("Data:", data);return data.name})
-  .then(name =>  {console.log(name)})
-  .catch(error => console.error("Error:", error));
+// fetchData()
+//   .then(data => {console.log("Data:", data);return data.name})
+//   .then(name =>  {console.log(name)})
+//   .catch(error => console.error("Error:", error));
 
   
 // call these API's and print results then call second API run the results then call third API and run the results. 
@@ -130,7 +130,9 @@ fetchData()
 // This example demonstrates how to fetch data from multiple APIs in sequence using Promises.
 setTimeout(() => {
     fetch('https://jsonplaceholder.typicode.com/users')
-        .then(res => res.json())
+        .then(res => {
+            console.log('This is the output:' + res);
+            return res.json()})
         .then(users => {
                 console.log('Success: Response code 200');
                 console.log('Users:', users);
@@ -151,16 +153,23 @@ setTimeout(() => {
 }, 2000);
 
 // Using async/await to fetch users
-// This is a more modern way to handle asynchronous operations in JavaScript.
 // It allows you to write asynchronous code that looks synchronous, making it easier to read and maintain
+//This uses try catch to handle errors with async/await
+//How to handle success/failures
   const fetchUsers = async () => {
   try {
-    const response = await fetch('https://jsonplaceholder.typicode.com/users');
-    const data = await response.json();
-    console.log(data);
+    const response1 = await fetch('https://jsonplaceholder.typicode.com/users');
+    const data1 = await response1.json();
+    console.log(data1);
+
+    const response2 = await fetch('https://reqres.in/api/users?page=2');
+    const data2 = await response2.json();
+    console.log(data2);
   } catch (error) {
     console.error('Error fetching users:', error);
   }
 };
 
 fetchUsers();
+
+
