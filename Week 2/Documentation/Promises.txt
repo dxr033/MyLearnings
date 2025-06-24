@@ -38,4 +38,7 @@ functions
 
 The first handler, sometimes called onFulfilled, is a success handler, and it should contain the logic for the promise resolving.
 The second handler, sometimes called onRejected, is a failure handler, and it should contain the logic for the promise rejecting.
-We can invoke .then() with one, both, or neither handler! This allows for flexibility, but it can also make for tricky debugging. If the appropriate handler is not provided, instead of throwing an error, .then() will just return a promise with the same settled value as the promise it was called on. One important feature of .then() is that it always returns a promise. We’ll return to this in more detail in a later exercise and explore why it’s so important.
+We can invoke .then() with one, both, or neither handler! This allows for flexibility, but it can also make for tricky debugging. If the appropriate handler is not provided, instead of throwing an error, .then() will just return a promise with the same settled value as the promise it was called on. One important feature of .then() is that it always returns a promise.
+
+
+Promise.all() to take in an array of Promises that we want to run. returns a Promise for eeach index
