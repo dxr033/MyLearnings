@@ -1,0 +1,23 @@
+Async is a Wrapper for Promises
+
+async functions always return a promise. This means we can use traditional promise syntax, like 
+Preview: Docs Loading link description
+.then()
+ and .catch, with our async functions. An async function will return in one of three ways:
+
+If there’s nothing returned from the function, it will return a promise with a resolved value of undefined.
+If there’s a non-promise value returned from the function, it will return a promise resolved to that value.
+If a promise is returned from the function, it will simply return that promise
+
+For Example:
+
+async function fivePromise() { 
+  return 5;
+}
+
+fivePromise()
+  .then(resolvedValue => {
+    console.log(resolvedValue);
+  })  // Prints 5
+
+
